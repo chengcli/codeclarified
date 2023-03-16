@@ -27,6 +27,7 @@ def index():
             return "Invalid file type", 400
 
         prettified_code, comments, prettified_file_path = code_processor.process_code(filepath)
+        os.remove(filepath)
         return render_template('result.html', prettified_code=prettified_code, comments=comments)
 
         # Return the results as JSON

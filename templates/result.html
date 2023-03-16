@@ -1,9 +1,22 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-    <h1>Prettified Code and Comments</h1>
-    <pre>{{ prettified_code }}</pre>
-    <pre>{{ comments }}</pre>
-    <a href="{{ url_for('index') }}">Back</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center my-4">Prettified Code</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <pre style="background-color: black; padding: 15px; overflow: auto; white-space: pre-wrap;"><code id="prettified-code" class="language-python">{{ prettified_code|safe }}</code></pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Go Back</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
