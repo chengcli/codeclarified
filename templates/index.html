@@ -1,16 +1,22 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
 <div class="container">
-    <h1>CodeClarified.ai</h1>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="codefile" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <!-- Add the progress bar -->
-    <div class="progress" style="height: 20px;">
-        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center my-4">CodeClarified.ai</h1>
+            <p class="text-center">Upload a code file to receive a prettified and commented version of the code.</p>
+            <form id="upload-form" action="/" method="POST" enctype="multipart/form-data" class="text-center">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file" name="codefile" required>
+                    <label class="custom-file-label" for="file">Choose file</label>
+                </div>
+                <div class="progress mt-3" style="height: 24px; display: none;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Upload</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -18,4 +24,3 @@
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 {% endblock %}
-

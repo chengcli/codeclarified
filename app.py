@@ -5,7 +5,7 @@ from flask_socketio import SocketIO
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = {'txt', 'py', 'java', 'js', 'c', 'cpp'}
+ALLOWED_EXTENSIONS = {'txt', 'py', 'java', 'js', 'c', 'cpp', 'h', 'hpp'}
 
 app = Flask(__name__)
 #app.config.from_object('config')
