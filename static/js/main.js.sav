@@ -1,0 +1,28 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+    const progressBar = document.getElementById('progress-bar');
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        const formData = new FormData(form);
+
+        fetch('/', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response data (e.g., display prettified code and comments)
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+
+    socket.on('progress', data => {
+        progressBar.style.width = `${data.percentage}%`;
+    });
+});
+

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Prettified Code and Comments</h1>
+    <pre>{{ prettified_code }}</pre>
+    <pre>{{ comments }}</pre>
+    <a href="{{ url_for('index') }}">Back</a>
+{% endblock %}
+

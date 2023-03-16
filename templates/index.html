@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>CodeClarified.ai</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="codefile" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Add the progress bar -->
+    <div class="progress" style="height: 20px;">
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</div>
+
+<!-- Load the main.js script -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}
+
