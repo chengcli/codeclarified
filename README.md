@@ -1,6 +1,6 @@
-# CodeClarified.ai
+# CodePrettifier.ai
 
-CodeClarified.ai is a web application that accepts a code file and outputs a prettified and commented version of the code without changing its content. This project is built using Python, Flask, and the OpenAI API.
+CodePrettifier.ai is a web application that accepts a code file and outputs a prettified and commented version of the code without changing its content. This project is built using Python, Flask, and the OpenAI API.
 
 ## Features
 
@@ -21,7 +21,7 @@ CodeClarified.ai is a web application that accepts a code file and outputs a pre
 
 1. Clone the repository:
 ```
-git clone https://github.com/chengcli/CodeClarified.ai.git
+git clone https://github.com/chengcli/CodePrettifier.git
 ```
 
 2. (Optional) Create and activate a virtual environment:

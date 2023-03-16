@@ -21,6 +21,10 @@ def index():
         if code_file and allowed_file(code_file.filename):
             filename = secure_filename(code_file.filename)
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            if os.path.exists(filepath):
+                os.remove(filepath)
+                print(filepath)
+                print(os.path.exists(filepath))
             code_file.save(filepath)
 
         else:
@@ -44,5 +48,5 @@ def allowed_file(filename):
 
 if __name__ == '__main__':
     #socketio.run(app, debug=True)
-    app.run(debug=True)
+    app.run(debug=False)
 
