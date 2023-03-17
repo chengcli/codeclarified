@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import os
 from modules import code_processor
-from flask_socketio import SocketIO
+#from flask_socketio import SocketIO
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = 'uploads'
